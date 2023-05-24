@@ -6,9 +6,9 @@
 
     <context-param>
         <param-name>apiUrl</param-name>
-        <param-value>https://btl-n8-quan-ly-diem-sv.herokuapp.com/</param-value>
+        <param-value>https://btl-n8-quan-ly-diem-sv.herokuapp.com/api</param-value>
     </context-param>
-    
+
 
     <welcome-file-list>
         <welcome-file>auth/login</welcome-file>

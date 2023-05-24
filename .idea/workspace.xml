@@ -11,11 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aa62ee80-3592-44c4-86bd-6a10044b5324" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/quanlysv-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/quanlysv-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/quanlysv-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/quanlysv-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/quanlysv-1.0-SNAPSHOT/home/admin/student/student.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/quanlysv-1.0-SNAPSHOT/home/admin/student/student.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +194,7 @@
       <workItem from="1684893545476" duration="11214000" />
       <workItem from="1684907417072" duration="3225000" />
       <workItem from="1684911055257" duration="2747000" />
-      <workItem from="1684914324384" duration="3099000" />
+      <workItem from="1684914324384" duration="4166000" />
     </task>
     <servers />
   </component>
