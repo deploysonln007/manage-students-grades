@@ -14,11 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 @WebServlet("/api/admin/home/student")
 public class StudentController extends HttpServlet {
     private IStudentService service;
-
+    private static final Logger logger = LogManager.getLogger(StudentController.class);
     public StudentController(){
         this.service = new StudentServiceImpl();
     }
@@ -27,9 +28,13 @@ public class StudentController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
-        StudentFilter baseRequest = HttpUtil.of(req.getReader()).toModel(StudentFilter.class);
-        BaseResponse<?> baseResponse = service.findStudent(baseRequest);
-        ResponseUtils.responseApi(req, resp, baseResponse);
+        try {
+            StudentFilter baseRequest = HttpUtil.of(req.getReader()).toModel(StudentFilter.class);
+            BaseResponse<?> baseResponse = service.findStudent(baseRequest);
+            ResponseUtils.responseApi(req, resp, baseResponse);
+        }catch (Exception e){
+            logger.error(e.getMessage() + "loi o StudentController" );
+        }
     }
 
     @Override
