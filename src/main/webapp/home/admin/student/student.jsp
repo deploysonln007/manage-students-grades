@@ -12,6 +12,9 @@
 <%@ page import="java.net.URI" %>
 <%@ page import="java.io.IOException" %>
 <%@ page import="java.nio.charset.StandardCharsets" %>
+<%@ page import="com.google.gson.Gson" %>
+<%@ page import="com.google.gson.GsonBuilder" %>
+<%@ page import="com.google.gson.JsonObject" %>
 <html>
 <head>
     <%@include file="../menu/admin_menu_header.jsp" %>
@@ -43,16 +46,23 @@
     }
 
     // request body for getAll, finding and sorting
-    String requestBody = "{" +
-            "\"idSv\":\"" + idSv + "\"," +
-            "\"tenSv\":\"" + tenSv + "\"," +
-            "\"baseRequest\":{" +
-            "\"sortField\":\"" + sortField + "\"," +
-            "\"sortOrder\":\"" + sortOrder + "\"," +
-            "\"pageIndex\":" + pageIndex + "," +
-            "\"pageSize\":" + pageSize +
-            "}" +
-            "}";
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+// Tạo đối tượng baseRequest
+    JsonObject baseRequest = new JsonObject();
+    baseRequest.addProperty("sortField", sortField);
+    baseRequest.addProperty("sortOrder", sortOrder);
+    baseRequest.addProperty("pageIndex", pageIndex);
+    baseRequest.addProperty("pageSize", pageSize);
+
+// Tạo đối tượng JSON chính
+    JsonObject jsonObject = new JsonObject();
+    jsonObject.addProperty("idSv", idSv);
+    jsonObject.addProperty("tenSv", tenSv);
+    jsonObject.add("baseRequest", baseRequest);
+
+// Chuyển đối tượng JSON thành chuỗi
+    String requestBody = gson.toJson(jsonObject);
 
 
     // get baseUrl
